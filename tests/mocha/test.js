@@ -76,7 +76,7 @@ describe('Mocha smoke test', () => {
         expect(errorVal).toBe(42)
     })
 
-    it('should allow to chain custom commands', () => {
+    it('should allow to chain custom commands', async () => {
         await browser.isExistingScenario()
         browser.addCommand('foo', () => Promise.resolve('foo').then((r) => r + 'bar'), true)
         expect(await browser.foo()).toBe('foobar')
